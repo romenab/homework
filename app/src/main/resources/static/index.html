@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Version App</title>
+</head>
+<body>
+    <h1 id="versionText">Loading version...</h1>
+
+    <script>
+        fetch('/GetApplicationVersion')
+            .then(response => response.text())
+            .then(version => {
+                document.getElementById('versionText').textContent = 'Application version is ' + version;
+            });
+    </script>
+</body>
+</html>
